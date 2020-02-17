@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include "apple.hpp"
 
 using namespace std;
 using namespace sf;
@@ -11,6 +12,11 @@ public:
     Texture texture;
     RectangleShape shape;
     RectangleShape shapetop;
+    Apple apple;
+    vector<Apple>appleList{apple};
+
+
+
 
     Wall()
     {
@@ -23,14 +29,33 @@ public:
         shape.setTexture(&texture);
         shapetop.setTexture(&texture);
 
-
     }
     void updateTam()
     {
         tamY = (rand() % 300+(-400));
         shape.setSize(Vector2f(tamX,tamY));
-        shapetop.setSize(Vector2f(tamX,(h+tamY-200)));
+        shapetop.setSize(Vector2f(tamX,(h+tamY-400)));
+        appleList[0].shape.setPosition(shapetop.getPosition().x+10,shapetop.getGlobalBounds().height+90);
 
+    }
+    void mover(float x,float y)
+    {
+                cout << int(appleList.size()) << endl;
+
+        shape.move(x,y);
+        shapetop.move(x,y);
+        if(appleList.size() == 1)
+        {
+            appleList[0].shape.move(x,y);
+        }
+    }
+    void deletar()
+    {
+        appleList.erase(appleList.begin()+0);
+    }
+    void adicionar()
+    {
+        appleList.push_back(Apple(apple));
     }
 
 

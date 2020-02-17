@@ -1,8 +1,7 @@
 # depslib dependency file v1.0
-1581888937 source:f:\projetos c++\sfml\main.cpp
+1581956680 source:f:\projetos c++\sfml\main.cpp
 	<SFML/Graphics.hpp>
 	"player.hpp"
-	"apple.hpp"
 	"wall.hpp"
 	"background.hpp"
 	"score.hpp"
@@ -438,7 +437,7 @@
 	<iostream>
 	<ctime>
 
-1581889045 f:\projetos c++\sfml\apple.hpp
+1581954808 f:\projetos c++\sfml\apple.hpp
 	<SFML/Graphics.hpp>
 
 1578361103 f:\projetos c++\sfml\player.hpp
@@ -450,8 +449,9 @@
 	"player.hpp"
 	"variables.hpp"
 
-1581888937 f:\projetos c++\sfml\wall.hpp
+1581957042 f:\projetos c++\sfml\wall.hpp
 	<SFML/Graphics.hpp>
+	"apple.hpp"
 
 1578353595 f:\projetos c++\sfml\background.hpp
 	<SFML/Graphics.hpp>

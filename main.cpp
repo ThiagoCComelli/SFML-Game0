@@ -1,6 +1,5 @@
 #include <SFML/Graphics.hpp>
 #include "player.hpp"
-#include "apple.hpp"
 #include "wall.hpp"
 #include "background.hpp"
 #include "score.hpp"
@@ -16,7 +15,6 @@ int main()
     window.setFramerateLimit(60);
 
     Player player;
-    Apple apples;
     Wall wall;
     Background background;
     Score score;
@@ -41,16 +39,13 @@ int main()
     }
 
 
-    vector<Apple>applesList;
     vector<Wall>wallList;
     for(int i = 0; i<6; i++)
     {
-        applesList.push_back(Apple(apples));
         wallList.push_back(Wall(wall));
         wallList[i].shape.setPosition(a+=(-160),h);
         wallList[i].shapetop.setPosition(a,0);
         wallList[i].updateTam();
-        applesList[i].shape.setPosition(wallList[i].shapetop.getPosition().x+10,wallList[i].shapetop.getGlobalBounds().height+90);
     }
 
 
@@ -118,14 +113,17 @@ int main()
             }
 
             /// PLAYER && APPLE ///
-            for(int i = 0; i<int(applesList.size()); i++)
+            for(int i = 0; i<int(wallList.size()); i++)
             {
-                if(player.shape.getGlobalBounds().intersects(applesList[i].shape.getGlobalBounds()))
+                if(wallList[i].appleList.size() == 1)
                 {
-                    applesList[i].shape.setPosition(0,-20);
-                    player.pointsCC();
-                    text.setString(score.getText(player.getPoints(),0));
+                    if(player.shape.getGlobalBounds().intersects(wallList[i].appleList[0].shape.getGlobalBounds()))
+                    {
+                        wallList[i].deletar();
+                        player.pointsCC();
+                        text.setString(score.getText(player.getPoints(),0));
 
+                    }
                 }
             }
 
@@ -144,15 +142,16 @@ int main()
 
             for(int i =0; i<int(wallList.size()); i++)
             {
-                wallList[i].shape.move(3,0);
-                wallList[i].shapetop.move(3,0);
-                applesList[i].shape.move(3,0);
+                wallList[i].mover(3,0);
                 if(wallList[i].shape.getPosition().x > w)
                 {
                     wallList[i].shape.setPosition(-40,wallList[i].shape.getPosition().y);
                     wallList[i].shapetop.setPosition(-40,wallList[i].shapetop.getPosition().y);
+                    if (wallList[i].appleList.size() == 0)
+                    {
+                        wallList[i].adicionar();
+                    }
                     wallList[i].updateTam();
-                    applesList[i].shape.setPosition(wallList[i].shapetop.getPosition().x+10,wallList[i].shapetop.getGlobalBounds().height+90);
                 }
             }
             /// REPAIR POSITION ///
@@ -182,12 +181,13 @@ int main()
             {
                 window.draw(wallList[i].shape);
                 window.draw(wallList[i].shapetop);
+                if(wallList[i].appleList.size() == 1)
+                {
+                    window.draw(wallList[i].appleList[0].shape);
+                }
             }
 
-            for(int i = 0; i<int(applesList.size()); i++)
-            {
-                window.draw(applesList[i].shape);
-            }
+
 
             window.draw(text);
 
