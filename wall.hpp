@@ -32,7 +32,7 @@ public:
     {
         tamY = (rand() % 300+(-400));
         shape.setSize(Vector2f(tamX,tamY));
-        shapetop.setSize(Vector2f(tamX,(h+tamY-400)));
+        shapetop.setSize(Vector2f(tamX,(h+tamY-200)));
         appleList[0].shape.setPosition(shapetop.getPosition().x+10,shapetop.getGlobalBounds().height+90);
 
     }
