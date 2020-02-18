@@ -15,9 +15,6 @@ public:
     Apple apple;
     vector<Apple>appleList{apple};
 
-
-
-
     Wall()
     {
         texture.loadFromFile("images/red.png");
@@ -30,6 +27,7 @@ public:
         shapetop.setTexture(&texture);
 
     }
+
     void updateTam()
     {
         tamY = (rand() % 300+(-400));
@@ -40,7 +38,6 @@ public:
     }
     void mover(float x,float y)
     {
-                cout << int(appleList.size()) << endl;
 
         shape.move(x,y);
         shapetop.move(x,y);
@@ -57,8 +54,5 @@ public:
     {
         appleList.push_back(Apple(apple));
     }
-
-
-
 
 };

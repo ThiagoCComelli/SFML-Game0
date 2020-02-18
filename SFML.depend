@@ -1,10 +1,7 @@
 # depslib dependency file v1.0
-1581956680 source:f:\projetos c++\sfml\main.cpp
+1582041163 source:f:\projetos c++\sfml\main.cpp
 	<SFML/Graphics.hpp>
-	"player.hpp"
-	"wall.hpp"
-	"background.hpp"
-	"score.hpp"
+	"menu.hpp"
 
 1525812018 c:\libraries\sfml-2.5.1\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -422,7 +419,7 @@
 	<iostream>
 	<ctime>
 
-1578359735 f:\projetos c++\sfml\variables.hpp
+1582038313 f:\projetos c++\sfml\variables.hpp
 	<iostream>
 	<iomanip>
 	<sstream>
@@ -449,7 +446,7 @@
 	"player.hpp"
 	"variables.hpp"
 
-1581957042 f:\projetos c++\sfml\wall.hpp
+1582033449 f:\projetos c++\sfml\wall.hpp
 	<SFML/Graphics.hpp>
 	"apple.hpp"
 
@@ -473,4 +470,30 @@
 	"wall.hpp"
 	"background.hpp"
 	"score.hpp"
+
+1582035050 f:\projetos c++\sfml\stage0.cpp
+	<SFML/Graphics.hpp>
+	"player.hpp"
+	"wall.hpp"
+	"background.hpp"
+	"score.hpp"
+
+1582035050 source:f:\projetos c++\sfml\stage0.cpp
+	<SFML/Graphics.hpp>
+	"player.hpp"
+	"wall.hpp"
+	"background.hpp"
+	"score.hpp"
+
+1582041162 f:\projetos c++\sfml\stage0.hpp
+	<SFML/Graphics.hpp>
+	"player.hpp"
+	"wall.hpp"
+	"background.hpp"
+	"score.hpp"
+	"windows.h"
+
+1582045982 f:\projetos c++\sfml\menu.hpp
+	<SFML/Graphics.hpp>
+	"stage0.hpp"
 

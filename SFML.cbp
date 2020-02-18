@@ -50,6 +50,7 @@
 		<Unit filename="apple.hpp" />
 		<Unit filename="background.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menu.hpp" />
 		<Unit filename="player.hpp" />
 		<Unit filename="score.hpp" />
 		<Unit filename="sfml-audio-2.dll" />
@@ -62,6 +63,7 @@
 		<Unit filename="sfml-system-d-2.dll" />
 		<Unit filename="sfml-window-2.dll" />
 		<Unit filename="sfml-window-d-2.dll" />
+		<Unit filename="stage0.hpp" />
 		<Unit filename="variables.hpp" />
 		<Unit filename="wall.hpp" />
 		<Extensions>
